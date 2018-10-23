@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     state = { 
@@ -31,7 +32,7 @@ class Home extends Component {
                             </div>
                             <div className="columns is-multiline">
                             <div className="column">
-                                <button className="button is-primary" style={{ width: "100%" }}>Show</button>
+                                <Link className="button is-primary" style={{ width: "100%" }} to={`/players/${p._id}`}>Show</Link>
                             </div>
                         </div>
                         </div>

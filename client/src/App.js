@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Layout>
       <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Home}/> 
         <Route path="/new" component={CreatePlayer}/>
         <Route component={NotFound}/>
       </Switch>
