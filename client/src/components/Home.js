@@ -20,20 +20,21 @@ class Home extends Component {
     renderPlayers = () => {
         return this.state.players.map(p => {
             return (
-                <div key={p._id} class="card">
-                    <div class="card-image">
-                        <figure class="image is-square">
-                        <img alt={`${p.name} image`} src={p.image}/>
-                        </figure>
+                <div key={p._id} className="card is-light column is-one-quarter">
+                    <div className="card-image">
+                        <img src={p.image}/>
                     </div>
-                    <div class="card-content">
-                        <div class="media-content">
-                            <p class="title is-4">{p.name}</p>
+                    <div className="card-content">
+                        <div className="media-content" style={{ textAlign: "center" }}>
+                            <div className="columns">
+                                <p className="title is-4" style={{ textAlign: "center" }}>{p.name}</p>
+                            </div>
+                            <div className="columns is-multiline">
+                            <div className="column">
+                                <button className="button is-primary" style={{ width: "100%" }}>Show</button>
+                            </div>
                         </div>
-                    </div>
-                     <div class="content">
-                        <button className="button is-primary">Edit</button>
-                        <button className="button is-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
             )
@@ -47,7 +48,9 @@ class Home extends Component {
         return (
             <div>
                 <h1>Welcome to Mario Kart!</h1>
-                {this.renderPlayers()}
+                <div className="columns is-multiline" style={{ marginTop: "20px" }}>
+                    {this.renderPlayers()}
+                </div>
             </div>
         );
     }
